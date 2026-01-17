@@ -35,7 +35,7 @@ func (t *Topic) GetPartition(id int) (*Queue, error) {
 		return p, nil
 	}
 
-	// Partitions are subdirectories within the topic directory
+	
 	partitionDir := filepath.Join(t.dataDir, t.name)
 	if err := os.MkdirAll(partitionDir, 0755); err != nil {
 		return nil, fmt.Errorf("failed to create partition directory: %w", err)
